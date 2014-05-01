@@ -18,6 +18,7 @@ class CFLint(Linter):
     syntax = ('coldfusioncfc','html+cfml')
     cmd = ('cflint -q -text -file')
     regex = r'''(?xi)
+        ^\s*Column:(?P<col>\d+)$\r?\n
         ^\s*Line:(?P<line>\d+)$\r?\n
         ^\s*message:(?P<message>.+)$
     '''
