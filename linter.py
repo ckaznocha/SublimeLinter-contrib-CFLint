@@ -22,22 +22,22 @@ class CFLint(Linter):
     version_re = r'\b(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.1.8'
     regex = r'''(?xi)
-        #The severity
+        # The severity
         ^\s*Severity:(?:(?P<warning>(INFO|WARNING))|(?P<error>ERROR))\s*$\r?\n
 
-        #The file name
+        # The file name
         ^.*$\r?\n
 
-        #The Message Code
+        # The Message Code
         ^.*$\r?\n
 
-        #The Column number
+        # The Column number
         ^\s*Column:(?P<col>\d+)\s*$\r?\n
 
-        #The Line number
+        # The Line number
         ^\s*Line:(?P<line>\d+)\s*$\r?\n
 
-        #The Error Message
+        # The Error Message
         ^\s*Message:(?P<message>.+)$\r?\n
     '''
     multiline = True
