@@ -1,7 +1,7 @@
 SublimeLinter-contrib-CFLint
 ================================
 
-[![Build Status](https://khancdn.eu/badges.php?service=https%3A%2F%2Ftravis-ci.org%2FSublimeLinter%2FSublimeLinter-contrib-CFLint.png%3Fbranch%3Dmaster)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-CFLint)
+[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-CFLint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-CFLint)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [CFLint](https://github.com/ryaneberly/CFLint). It will be used with files that have the “CFML” “CFC” syntax.
 
@@ -11,15 +11,10 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 ### Linter installation
 Before using this plugin, you must ensure that `CFLint` is installed on your system. To install `CFLint`, do the following:
 
-1. Install Other.
+1. Install [Sublimetext ColdFusion](https://github.com/SublimeText/ColdFusion)
+2. Download [CFLint](https://github.com/ryaneberly/CFLint/)
 
-1. Install `CFLint` by typing the following in a terminal:
-   ```
-   <package manager> install CFLint
-   ```
-
-
-**Note:** This plugin requires `CFLint` 0.1.7 or later.
+**Note:** This plugin requires `CFLint` 0.1.8 or later.
 
 ### Linter configuration
 In order for `CFLint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
