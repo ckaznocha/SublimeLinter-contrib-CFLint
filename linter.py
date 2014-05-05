@@ -11,16 +11,36 @@
 """This module exports the CFLint plugin class."""
 from SublimeLinter.lint import Linter, util
 
+
 class CFLint(Linter):
 
     """Provides an interface to CFLint."""
 
-    syntax = ('coldfusioncfc','html+cfml')
-    cmd = ('cflint -q -text -file')
+    syntax = ('coldfusioncfc', 'html+cfml')
+    cmd = 'cflint -q -text -file'
+    version_args = '-version'
+    version_re = r'\b(?P<version>\d+\.\d+\.\d+)'
+    version_requirement = '>= 0.1.8'
     regex = r'''(?xi)
-        ^\s*Column:(?P<col>\d+)$\r?\n
-        ^\s*Line:(?P<line>\d+)$\r?\n
-        ^\s*message:(?P<message>.+)$
+        #The severity
+        ^\s*Severity:(?:(?P<warning>(INFO|WARNING))|(?P<error>ERROR))\s*$\r?\n
+
+        #The file name
+        ^.*$\r?\n
+
+        #The Message Code
+        ^.*$\r?\n
+
+        #The Column number
+        ^\s*Column:(?P<col>\d+)\s*$\r?\n
+
+        #The Line number
+        ^\s*Line:(?P<line>\d+)\s*$\r?\n
+
+        #The Error Message
+        ^\s*Message:(?P<message>.+)$\r?\n
     '''
     multiline = True
+    error_stream = util.STREAM_STDOUT
+    word_re = r'^<?(#?[-\w]+)'
     tempfile_suffix = '-'
