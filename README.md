@@ -1,7 +1,7 @@
 SublimeLinter-contrib-CFLint
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-CFLint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-CFLint)
+[![Build Status](https://travis-ci.org/ckaznocha/SublimeLinter-contrib-CFLint.svg?branch=master)](https://travis-ci.org/ckaznocha/SublimeLinter-contrib-CFLint)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [CFLint](https://github.com/ryaneberly/CFLint). It will be used with files that have the “CFML” “CFC” syntax.
 
