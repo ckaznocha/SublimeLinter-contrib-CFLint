@@ -11,15 +11,15 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 ### Linter installation
 Before using this plugin, you must ensure that `CFLint` and `Sublimetext ColdFusion` are installed on your system.
 
-#### To install `CFLint`, do the following:
+To install `CFLint`, do the following:
 
-1. Download `CFLint` 0.1.8 or newer from [CFLint Releases](https://github.com/ryaneberly/CFLint/releases)
+1. Download ryaneberly's `CFLint` 0.1.8 or newer from [CFLint Releases](https://github.com/ryaneberly/CFLint/releases)
 1. Extract all files
-1. Currently the executlabe script files can be found in ./bin
+1. As of writing this the executlabe script files can be found in ./bin
 
 **Note:** This plugin requires `CFLint` 0.1.8 or later.
 
-#### To install `Sublimetext ColdFusion`, do the following:
+To install `Sublimetext ColdFusion`, do the following:
 
 1. Follow the appropriate instructions here [Sublimetext ColdFusion](https://github.com/SublimeText/ColdFusion)
 
