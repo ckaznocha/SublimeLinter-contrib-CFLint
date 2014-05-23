@@ -13,15 +13,15 @@ Before using this plugin, you must ensure that `CFLint` and `Sublimetext ColdFus
 
 To install `CFLint`, do the following:
 
-1. Download ryaneberly's `CFLint` 0.1.8 or newer from [CFLint Releases](https://github.com/ryaneberly/CFLint/releases)
+1. Download `CFLint` 0.1.8 or newer from [ryaneberly/CFLint/releases](https://github.com/ryaneberly/CFLint/releases)
 1. Extract all files
 1. As of writing this the executlabe script files can be found in ./bin
 
 **Note:** This plugin requires `CFLint` 0.1.8 or later.
 
-To install `Sublimetext ColdFusion`, do the following:
+To install `SublimeText ColdFusion`, do the following:
 
-1. Follow the appropriate instructions here [Sublimetext ColdFusion](https://github.com/SublimeText/ColdFusion)
+1. Follow the appropriate instructions from [SublimeText/ColdFusion](https://github.com/SublimeText/ColdFusion)
 
 ### Linter configuration
 In order for `CFLint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
