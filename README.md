@@ -9,12 +9,19 @@ This linter plugin for [SublimeLinter][docs] provides an interface to [CFLint](h
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
-Before using this plugin, you must ensure that `CFLint` is installed on your system. To install `CFLint`, do the following:
+Before using this plugin, you must ensure that `CFLint` and `Sublimetext ColdFusion` are installed on your system.
 
-1. Install [Sublimetext ColdFusion](https://github.com/SublimeText/ColdFusion)
-2. Download [CFLint](https://github.com/ryaneberly/CFLint/)
+#### To install `CFLint`, do the following:
+
+1. Download `CFLint` 0.1.8 or newer from [CFLint Releases](https://github.com/ryaneberly/CFLint/releases)
+1. Extract all files
+1. Currently the executlabe script files can be found in ./bin
 
 **Note:** This plugin requires `CFLint` 0.1.8 or later.
+
+#### To install `Sublimetext ColdFusion`, do the following:
+
+1. Follow the appropriate instructions here [Sublimetext ColdFusion](https://github.com/SublimeText/ColdFusion)
 
 ### Linter configuration
 In order for `CFLint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
