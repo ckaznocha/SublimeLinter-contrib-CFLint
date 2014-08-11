@@ -28,6 +28,18 @@ In order for `CFLint` to be executed by SublimeLinter, you must ensure that its 
 
 Once you have installed and configured `CFLint`, you can proceed to install the SublimeLinter-contrib-CFLint plugin if it is not yet installed.
 
+On Mac OS X, to install `CFLint` into a location that can be found by SublimeLinter it is recommended that you place the contents of the zip file into a directory in /usr/local/lib/ called 'cflint' and then add a symbolic link in /usr/local/bin to the cflint execute file in /usr/local/lib/cflint/bin/. 
+
+You will also need to make the cflint file in the bin directory executable if it is not already. To check this configuration has worked type 
+
+`which cflint`
+
+at the command prompt and you should get the response:
+
+`/usr/local/bin//cflint`
+
+You can also type `cflint` at the command prompt and make sure cflint executes and gives you the CLI help screen.
+
 ### Plugin installation
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
 
@@ -49,7 +61,7 @@ If you would like to contribute enhancements or fixes, please do the following:
 1. Make a pull request.
 1. Be patient.  ;-)
 
-Please note that modications should follow these coding guidelines:
+Please note that modifications should follow these coding guidelines:
 
 - Indent is 4 spaces.
 - Code should pass flake8 and pep257 linters.
