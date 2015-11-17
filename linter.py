@@ -17,7 +17,7 @@ class CFLint(Linter):
     """Provides an interface to CFLint."""
 
     syntax = ('coldfusioncfc', 'html+cfml')
-    cmd = 'cflint -q -text -file'
+    cmd = 'cflint -file @ -q -text'
     version_args = '-version'
     version_re = r'\b(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.1.8'
