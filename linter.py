@@ -13,7 +13,6 @@ from SublimeLinter.lint import Linter, util
 
 
 class CFLint(Linter):
-
     """Provides an interface to CFLint."""
 
     syntax = ('coldfusioncfc', 'html+cfml')
