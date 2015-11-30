@@ -17,6 +17,7 @@ class CFLint(Linter):
 
     syntax = ('coldfusioncfc', 'html+cfml')
     cmd = 'cflint -file @ -q -text'
+    config_file = ('-configfile', 'cflintrc.xml')
     version_args = '-version'
     version_re = r'\b(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.1.8'
