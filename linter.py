@@ -15,7 +15,7 @@ from SublimeLinter.lint import Linter, util
 class CFLint(Linter):
     """Provides an interface to CFLint."""
 
-    syntax = ('coldfusioncfc', 'html+cfml')
+    syntax = ('coldfusioncfc', 'html+cfml', 'cfml')
     cmd = 'cflint -file @ -q -text'
     config_file = ('-configfile', 'cflintrc.xml')
     version_args = '-version'
