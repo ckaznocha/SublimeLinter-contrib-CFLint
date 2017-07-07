@@ -13,11 +13,12 @@ Before using this plugin, you must ensure that **CFLint** and **SublimeText-CFML
 
 To install **CFLint**, do the following:
 
-1. Download `CFLint-1.0.1-all.jar` or newer from [ryaneberly/CFLint/releases](https://github.com/ryaneberly/CFLint/releases) or [Maven repository](http://search.maven.org/#search%7Cga%7C1%7Ccflint)
+1. Download latest Java SE 8+ [JRE](https://www.java.com/en/download/manual.jsp) or [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) if you plan to build it yourself.
+1. Download latest **CFLint** standalone JAR (`CFLint-1.0.1-all.jar` or newer) from [ryaneberly/CFLint/releases](https://github.com/ryaneberly/CFLint/releases) or [Maven repository](http://search.maven.org/#search%7Cga%7C1%7Ccflint). Alternatively, build it yourself using [these instructions](https://github.com/cflint/CFLint/wiki/How-Do-I-Install-This-Tool%3F).
 
 To install **SublimeText-CFML**, do the following:
 
-1. Follow the appropriate instructions from [jcberquist/sublimetext-cfml](https://github.com/jcberquist/sublimetext-cfml)
+1. Follow the instructions from [jcberquist/sublimetext-cfml](https://github.com/jcberquist/sublimetext-cfml).
 
 ### Plugin installation
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
