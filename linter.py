@@ -54,6 +54,8 @@ class CFLint(Linter):
     }
 
     def __init__(self, view, syntax):
+        """Override init to dynamically set config_file."""
+
         Linter.__init__(self, view, syntax)
 
         settings = self.get_view_settings()
