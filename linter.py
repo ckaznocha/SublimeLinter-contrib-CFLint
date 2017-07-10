@@ -16,31 +16,67 @@ class CFLint(Linter):
     """Provides an interface to CFLint."""
 
     syntax = ('coldfusioncfc', 'html+cfml', 'cfml')
-    cmd = 'cflint -file @ -q -text'
-    config_file = ('-configfile', 'cflintrc.xml')
-    version_args = '-version'
-    version_re = r'\b(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 0.1.8'
+    executable = 'java'
+    cmd = None
     regex = r'''(?xi)
-        # The severity
-        ^\s*Severity:(?:(?P<warning>(INFO|WARNING))|(?P<error>ERROR))\s*$\r?\n
+        # Severity
+        ^\s*Severity:(?:(?P<warning>(WARNING|CAUTION|INFO|COSMETIC))|(?P<error>(FATAL|CRITICAL|ERROR)))\s*$\r?\n
 
-        # The file name
+        # Message code
         ^.*$\r?\n
 
-        # The Message Code
+        # File name
         ^.*$\r?\n
 
-        # The Column number
+        # Column number
         ^\s*Column:(?P<col>\d+)\s*$\r?\n
 
-        # The Line number
+        # Line number
         ^\s*Line:(?P<line>\d+)\s*$\r?\n
 
-        # The Error Message
+        # Message
         ^\s*Message:(?P<message>.+)$\r?\n
+
+        # Variable
+        ^.*$\r?\n
+
+        # Expression
+        ^.*$\r?\n
     '''
     multiline = True
     error_stream = util.STREAM_STDOUT
-    word_re = r'^<?(#?[-\w]+)'
+    word_re = r'^<?(#?[-\w]+#?)'
     tempfile_suffix = '-'
+    defaults = {
+        'jar_file': '',
+        'config_file_name': 'cflintrc.xml',
+        'aux_config_dirs': []
+    }
+
+    def __init__(self, view, syntax):
+        Linter.__init__(self, view, syntax)
+
+        settings = self.get_view_settings()
+        config_file_name = settings.get('config_file_name')
+        aux_config_dirs = settings.get('aux_config_dirs')
+        config_file_tuple = ('-configfile', config_file_name)
+
+        for conf in aux_config_dirs:
+            config_file_tuple += (conf,)
+
+        self.config_file = config_file_tuple
+
+    def cmd(self):
+        """Return the command line to execute."""
+
+        jar_file = self.get_jarfile_path()
+
+        return [self.executable_path, '-jar', jar_file, '-file', '@', '-q', '-text']
+
+    def get_jarfile_path(self):
+        """Return the absolute path to the CFLint jar file."""
+
+        settings = self.get_view_settings()
+        jar_file = settings.get('jar_file')
+
+        return jar_file
