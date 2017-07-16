@@ -3,7 +3,7 @@ SublimeLinter-contrib-CFLint
 
 [![Build Status](https://travis-ci.org/ckaznocha/SublimeLinter-contrib-CFLint.svg?branch=master)](https://travis-ci.org/ckaznocha/SublimeLinter-contrib-CFLint)
 
-This linter plugin for [SublimeLinter 3][docs] provides an interface to [CFLint](https://github.com/ryaneberly/CFLint). It will be used with files that have the “CFML” “CFC” syntax.
+This linter plugin for [SublimeLinter 3][docs] provides an interface to [CFLint](https://github.com/cflint/CFLint). It will be used with files that have the “CFML” “CFC” syntax.
 
 ## Installation
 **SublimeLinter 3** must be installed in order to use this plugin. If **SublimeLinter 3** is not installed, please follow the instructions [here][installation].
@@ -14,7 +14,7 @@ Before using this plugin, you must ensure that **CFLint** and **SublimeText-CFML
 To install **CFLint**, do the following:
 
 1. Download latest Java SE 8+ [JRE](https://www.java.com/en/download/manual.jsp) or [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) if you plan to build it yourself.
-1. Download latest **CFLint** standalone JAR (`CFLint-1.0.1-all.jar` or newer) from [ryaneberly/CFLint/releases](https://github.com/ryaneberly/CFLint/releases) or [Maven repository](http://search.maven.org/#search%7Cga%7C1%7Ccflint). Alternatively, build it yourself using [these instructions](https://github.com/cflint/CFLint/wiki/How-Do-I-Install-This-Tool%3F).
+1. Download latest **CFLint** standalone JAR (`CFLint-1.0.1-all.jar` or newer) from [cflint/CFLint/releases](https://github.com/cflint/CFLint/releases) or [Maven repository](http://search.maven.org/#search%7Cga%7C1%7Ccflint). Alternatively, build it yourself using [these instructions](https://github.com/cflint/CFLint/wiki/How-Do-I-Install-This-Tool%3F).
 
 To install **SublimeText-CFML**, do the following:
 
