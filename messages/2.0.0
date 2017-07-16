@@ -1,0 +1,6 @@
+SublimeLinter-contrib-CFLint
+-------------------------------
+* BREAKING CHANGE: Uses new CFLint jar.
+
+Thanks to:
+  github.com/KamasamaK
