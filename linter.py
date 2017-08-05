@@ -1,6 +1,6 @@
 #
 # linter.py
-# Linter for SublimeLinter3, a code checking framework for Sublime Text 3
+# Linter for SublimeLinter 3, a code checking framework for Sublime Text 3
 #
 # Written by ckaznocha
 # Copyright (c) 2014 ckaznocha
@@ -49,7 +49,7 @@ class CFLint(Linter):
     tempfile_suffix = '-'
     defaults = {
         'jar_file': '',
-        'config_file_name': 'cflintrc.xml',
+        'config_file_name': '.cflintrc',
         'aux_config_dirs': []
     }
 
