@@ -33,6 +33,27 @@ To install via Package Control, do the following:
 For general information on how **SublimeLinter 3** works with settings, please see [Settings][settings]. For information on standard linter settings, please see [Linter Settings][linter-settings].
 
 ### Plugin-specific settings
+Once you have installed both the SublimeLinter 3 and SublimeLinter-contrib-CFLint plugins you will need to edit the CFLint settings.
+
+Preferences > Package Settings > SublimeLinter > Settings 
+
+You will see a CFLint section under the user settings (SublimeLinter.sublime-settings -- User):
+
+```
+"linters": {
+    "cflint": {
+        "@disable": false,
+        "args": [],
+        "aux_config_dirs": [],
+        "config_file_name": "cflintrc.xml",
+        "excludes": [],
+        "jar_file": ""
+    }
+},
+```
+
+Add the full path to your CFLint JAR file and optionally add config file information:
+
 - `jar_file` (_required_): This must contain the absolute path to the `CFLint-*-all.jar` file.
 - `config_file_name` (_optional_): This must contain just the file name for the **CFLint** config file. [default: `.cflintrc`]
 - `aux_config_dirs` (_optional_): An array of paths that will act as auxiliary directories in which to search for the config file if not found for the file being linted.
