@@ -19,7 +19,6 @@ logger = logging.getLogger('SublimeLinter.plugin.eslint')
 class CFLint(Linter):
     """Provides an interface to CFLint."""
 
-    syntax = ('coldfusioncfc', 'html+cfml', 'cfml')
     regex = r'''(?xi)
         # Severity
         ^\s*Severity:(?:(?P<warning>(WARNING|CAUTION|INFO|COSMETIC))|(?P<error>(FATAL|CRITICAL|ERROR)))\s*$\r?\n
@@ -48,6 +47,7 @@ class CFLint(Linter):
     multiline = True
     word_re = r'^<?(#?[-\w]+#?)'
     defaults = {
+        'selector': 'embedding.cfml, source.cfml, source.cfscript, text.html.cfm',
         'jar': '',
         '-configfile': ''
     }
