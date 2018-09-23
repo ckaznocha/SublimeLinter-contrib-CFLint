@@ -9,14 +9,16 @@
 #
 
 """This module exports the CFLint plugin class."""
-from SublimeLinter.lint import Linter, util
+import logging
+from SublimeLinter.lint import Linter
+
+
+logger = logging.getLogger('SublimeLinter.plugin.eslint')
 
 
 class CFLint(Linter):
     """Provides an interface to CFLint."""
 
-    syntax = ('coldfusioncfc', 'html+cfml', 'cfml')
-    cmd = ['java', '${args}', '-file', '@', '-q', '-text']
     regex = r'''(?xi)
         # Severity
         ^\s*Severity:(?:(?P<warning>(WARNING|CAUTION|INFO|COSMETIC))|(?P<error>(FATAL|CRITICAL|ERROR)))\s*$\r?\n
@@ -43,10 +45,46 @@ class CFLint(Linter):
         ^.*$\r?\n
     '''
     multiline = True
-    error_stream = util.STREAM_STDOUT
     word_re = r'^<?(#?[-\w]+#?)'
-    tempfile_suffix = '-'
     defaults = {
-        '-jar': '',
+        'selector': 'embedding.cfml, source.cfml, source.cfscript, text.html.cfm',
+        'jar': '',
         '-configfile': ''
     }
+
+    def cmd(self):
+        jar = self.settings.get('jar')
+        if not jar:
+            logger.error(jar_file_missing_error_message)
+            return None
+
+        return [
+            'java', '-jar', jar,
+            '-stdin', '${file}',
+            '-stdout',
+            '-text',
+            '-q',
+            '${args}'
+        ]
+
+
+jar_file_missing_error_message = """
+You MUST set the `jar` setting. It should point to your 'CFLint-*-all.jar'.
+The absolute path is usually necessary unless this file is right in your working
+dir.
+
+E.g. for the global SublimeLinter settings:
+
+    "linters": {
+        "cflint": {
+            "jar": "path/to/CFLint-1.4.0-all.jar"
+        }
+    }
+
+In project settings, you would use something like this:
+
+    "settings": {
+        "SublimeLinter.linters.cflint.jar": "path/to/CFLint-1.4.0-all.jar"
+    }
+
+"""
